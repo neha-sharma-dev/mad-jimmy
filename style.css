@@ -1,0 +1,251 @@
+/* Fonts & Colors */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #0B4C85;
+  scroll-behavior: smooth;
+}
+
+/* Header Section */
+header {
+  background-color: #0B4C85;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: white;
+  color: #0B4C85;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #084273;
+  color: white;
+}
+
+/* Bubble Animation */
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.bubble {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: rise 6s infinite linear;
+}
+
+.bubble:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+  width: 20px;
+  height: 20px;
+  left: 20%;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+  width: 50px;
+  height: 50px;
+  left: 35%;
+  animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  animation-delay: 0s;
+}
+
+.bubble:nth-child(5) {
+  width: 35px;
+  height: 35px;
+  left: 70%;
+  animation-delay: 3s;
+}
+
+.bubble:nth-child(6) {
+  width: 25px;
+  height: 25px;
+  left: 90%;
+  animation-delay: 5s;
+}
+
+@keyframes rise {
+  0% {
+    bottom: -100px;
+    transform: translateX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 1080px;
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+}
+
+/* Hero Layout */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 250px;
+  text-align: left;
+  z-index: 3;
+}
+
+.hero-logo {
+  flex: 0 0 auto;
+  z-index: 3;
+}
+
+.hero-logo img {
+  height: 80px;
+  width: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.hero-logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-text {
+    text-align: center;
+  }
+  
+  .hero-logo {
+    order: -1;
+  }
+  
+  .bubble {
+    display: none;
+  }
+}
+
+/* Offers Section */
+#offers {
+  text-align: center;
+  background-color: #f0f5fa;
+  padding: 40px 20px;
+  color: #0B4C85;
+  font-weight: 500;
+}
+
+#offers strong {
+  color: #E63946;
+}
+
+/* Services Section */
+#services {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+#services h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.service-card {
+  background-color: #f7f9fb;
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Contact Section */
+#contact {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #0B4C85;
+  color: white;
+}
+
+.contact-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.btn.secondary {
+  background-color: white;
+  color: #0B4C85;
+}
+
+.btn.secondary:hover {
+  background-color: #084273;
+  color: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #062f57;
+  color: white;
+  font-size: 0.9rem;
+}
