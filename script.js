@@ -1,3 +1,41 @@
+// Typewriter effect for main heading
+function typeWriter(element, text, speed = 100) {
+  let i = 0;
+  element.innerHTML = '';
+  element.style.opacity = '1';
+  
+  function type() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    } else {
+      // Remove cursor after typing is complete
+      setTimeout(() => {
+        element.style.borderRight = 'none';
+      }, 500);
+    }
+  }
+  type();
+}
+
+// Initialize hero animations on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const heading = document.querySelector('.hero-text h1');
+  const buttons = document.querySelector('.hero-buttons');
+  
+  if (heading) {
+    typeWriter(heading, 'Mad Jimmy Cleaning Services', 80);
+  }
+  
+  // Show buttons container after animations start
+  if (buttons) {
+    setTimeout(() => {
+      buttons.style.opacity = '1';
+    }, 3000);
+  }
+});
+
 function showCallOptions() {
   const callOptions = document.getElementById('call-options');
   callOptions.classList.toggle('hidden');
