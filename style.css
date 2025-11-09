@@ -231,24 +231,28 @@ header p {
 }
 
 @media (max-width: 768px) {
+  .bubble {
+    background: rgba(255, 255, 255, 0.2);
+    animation-duration: 4s;
+  }
+  
   @keyframes rise {
     0% {
-      bottom: -50px;
+      bottom: -30px;
       transform: translateX(0);
       opacity: 0;
     }
-    50% {
-      opacity: 1;
+    20% {
+      opacity: 0.8;
+    }
+    80% {
+      opacity: 0.8;
     }
     100% {
-      bottom: 400px;
-      transform: translateX(-50px);
+      bottom: 350px;
+      transform: translateX(-30px);
       opacity: 0;
     }
-  }
-  
-  .bubble {
-    animation-duration: 4s;
   }
 }
 
