@@ -230,6 +230,28 @@ header p {
   }
 }
 
+@media (max-width: 768px) {
+  @keyframes rise {
+    0% {
+      bottom: -50px;
+      transform: translateX(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      bottom: 400px;
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+  }
+  
+  .bubble {
+    animation-duration: 4s;
+  }
+}
+
 /* Hero Layout */
 .hero {
   display: flex;
