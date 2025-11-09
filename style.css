@@ -7,6 +7,65 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Fixed site header */
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #0B4C85;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.menu-btn {
+  font-size: 24px;
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.site-logo-link img, #site-logo {
+  height: 54px;
+  width: auto;
+  display: block;
+}
+
+/* Drawer */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 85%;
+  background: white;
+  z-index: 10000;
+  transform: translateX(-110%);
+  transition: transform 0.28s ease;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.12);
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.drawer.open { transform: translateX(0); }
+.drawer-close { background: transparent; border: none; font-size: 20px; position: absolute; right: 14px; top: 12px; cursor: pointer; }
+.drawer-content h2 { margin-top: 6px; }
+.drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 9998; }
+
+/* utility hidden */
+.hidden { display: none !important; }
+
+/* Add page top offset so content doesn't hide under fixed header */
+body { padding-top: 64px; }
+
 /* Header Section */
 header {
   background-color: #0B4C85;
@@ -15,7 +74,7 @@ header {
   padding: 100px 20px;
   position: relative;
   overflow: hidden;
-  min-height: 200px;
+  min-height: 170px;
 }
 
 header h1 {
@@ -41,6 +100,57 @@ header p {
 .btn:hover {
   background-color: #084273;
   color: white;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn.secondary:hover {
+  background-color: white;
+  color: #0B4C85;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.call-options {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.call-options.hidden {
+  display: none;
+}
+
+.call-number {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #0B4C85;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+
+.call-number:hover {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* Bubble Animation */
@@ -142,7 +252,7 @@ header p {
 }
 
 .hero-logo img {
-  height: 80px;
+  height: 180px;
   width: auto;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
   transition: transform 0.3s ease;
@@ -186,34 +296,72 @@ header p {
 }
 
 /* Services Section */
-#services {
+/* Services Section (new: responsive cards + fade-in animation) */
+.services-section {
+  padding: 72px 20px;
+  background: #ffffff;
+  color: #0B4C85;
+}
+
+.services-heading {
   text-align: center;
-  padding: 60px 20px;
+  color: #FF6F61; /* coral */
+  font-size: 2.25rem;
+  margin-bottom: 32px;
+  font-weight: 600;
 }
 
-#services h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-.service-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+  padding: 0 12px;
 }
 
 .service-card {
-  background-color: #f7f9fb;
-  border-radius: 15px;
-  padding: 25px;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: 0.3s;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(11,76,133,0.06);
+  transition: transform 280ms ease, box-shadow 280ms ease;
+  border: 1px solid rgba(11,76,133,0.04);
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(11,76,133,0.12), 0 0 18px 4px rgba(255,111,97,0.08);
+  outline: 2px solid rgba(255,111,97,0.06);
+}
+
+.service-image { height: 160px; width: 100%; overflow: hidden; background: #f2f6fb; }
+.service-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.service-body { padding: 16px 18px 22px; flex: 1; display: flex; flex-direction: column; }
+.service-body h3 { margin: 0 0 8px 0; font-size: 1.125rem; color: #0B4C85; }
+.service-body p { margin: 0; color: #385b7a; font-size: 0.95rem; line-height: 1.45; }
+
+/* Fade-in animation */
+.service-card { opacity: 0; transform: translateY(18px); }
+.services-section.in-view .service-card { animation: fadeInUp 520ms ease forwards; }
+.services-section.in-view .service-card:nth-child(1) { animation-delay: 0ms; }
+.services-section.in-view .service-card:nth-child(2) { animation-delay: 80ms; }
+.services-section.in-view .service-card:nth-child(3) { animation-delay: 160ms; }
+.services-section.in-view .service-card:nth-child(4) { animation-delay: 240ms; }
+.services-section.in-view .service-card:nth-child(5) { animation-delay: 320ms; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .service-image { height: 140px; }
+  .services-heading { font-size: 1.6rem; }
 }
 
 /* Contact Section */
@@ -231,15 +379,7 @@ header p {
   margin-top: 20px;
 }
 
-.btn.secondary {
-  background-color: white;
-  color: #0B4C85;
-}
 
-.btn.secondary:hover {
-  background-color: #084273;
-  color: white;
-}
 
 /* Footer */
 footer {
@@ -247,5 +387,5 @@ footer {
   padding: 20px;
   background-color: #062f57;
   color: white;
-  font-size: 0.9rem;
+  font-size: 1.0rem;
 }

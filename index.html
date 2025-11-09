@@ -8,6 +8,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Fixed site header (appears above all content) -->
+  <div id="site-header">
+    <button id="menu-btn" aria-label="Open menu" class="menu-btn">☰</button>
+    <a href="/" class="site-logo-link"><img id="site-logo" src="logo.svg" alt="Mad Jimmy Logo"></a>
+  </div>
+
+  <!-- About Us drawer (hidden by default) -->
+  <aside id="about-drawer" class="drawer hidden" aria-hidden="true">
+    <button id="drawer-close" class="drawer-close" aria-label="Close">✕</button>
+    <div class="drawer-content">
+      <h2>About Us</h2>
+      <p>
+      MAD JIMMY Expert Cleaners is a Melbourne-based cleaning company offering professional end-of-lease, commercial, and Airbnb turnover cleaning services. We take pride in delivering spotless results that make every space shine.
+      </p>
+      <h3>Why Choose Us?</h3>
+      <p>We’re a proudly ASIC-certified and fully registered Australian business, built on trust, transparency, and high professional standards. Our experienced cleaners use quality products, reliable methods, and an eye for detail to ensure every job meets the mark.</p>
+      <h3>Our Promise</h3>
+      <p>Your satisfaction is our priority. Whether it’s an end-of-lease, office, or short-stay clean, we guarantee a thorough, reliable, and bond-back–ready service — every single time.</p>
+      
+      <a href="#contact" class="btn">Contact Us</a>
+    </div>
+  </aside>
+
+  <div id="drawer-overlay" class="drawer-overlay hidden"></div>
+
   <header>
     <div class="bubbles">
       <div class="bubble"></div>
@@ -17,11 +42,18 @@
       <div class="bubble"></div>
       <div class="bubble"></div>
     </div>
-    <div class="container hero">
+  <div class="container hero">
       <div class="hero-text">
         <h1>Mad Jimmy Cleaning Services</h1>
         <p>Professional • Reliable • Affordable</p>
-        <a href="#book" class="btn">Book Now</a>
+        <div class="hero-buttons">
+          <button class="btn call-btn" onclick="showCallOptions()">📞 Call Now</button>
+          <a href="mailto:madjimmycleaning@gmail.com" class="btn secondary">Book via Mail</a>
+        </div>
+        <div id="call-options" class="call-options hidden">
+          <a href="tel:+61452612147" class="btn call-number">+61 452 612 147</a>
+          <a href="tel:+61451152016" class="btn call-number">+61 451 152 016</a>
+        </div>
       </div>
 
       <!-- Right side logo -->
@@ -36,28 +68,60 @@
   <p>🎉 Old Bill? Get <strong>20% OFF</strong> on your first cleaning service!</p>
 </section>
 
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="service-grid">
-    <div class="service-card">
-      <h3>Lease End & Start Cleaning</h3>
-      <p>Deep cleaning for moving in or out — spotless results guaranteed!</p>
-    </div>
-    <div class="service-card">
-      <h3>Commercial Office Cleaning</h3>
-      <p>Keep your workplace hygienic and shining every day.</p>
-    </div>
-    <div class="service-card">
-      <h3>Carpet Cleaning</h3>
-      <p>Professional steam cleaning that removes stains and refreshes your carpet.</p>
-    </div>
-    <div class="service-card">
-      <h3>Bathroom & Shower Cleaning</h3>
-      <p>Deep scrub and shine for tiles, glass, and fittings — no grime left behind.</p>
-    </div>
-    <div class="service-card">
-      <h3>Window Cleaning</h3>
-      <p>Crystal-clear windows inside and out for homes and offices.</p>
+<section id="services" class="services-section">
+  <div class="container">
+    <h2 class="services-heading">Our Services</h2>
+
+    <div class="services-grid" id="services-grid">
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://source.unsplash.com/600x400/?carpet,cleaning" alt="Carpet Cleaning">
+        </div>
+        <div class="service-body">
+          <h3>Carpet & Upholstery Cleaning</h3>
+          <p>Steam and deep-clean services remove stains, allergens and odours — extending carpet life and improving indoor air quality.</p>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://source.unsplash.com/600x400/?office,cleaning" alt="Office Cleaning">
+        </div>
+        <div class="service-body">
+          <h3>Office & Commercial Cleaning</h3>
+          <p>Daily or periodic cleaning packages to maintain a productive, hygienic workspace with minimal disruption.</p>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://source.unsplash.com/600x400/?house,cleaning" alt="Lease End Cleaning">
+        </div>
+        <div class="service-body">
+          <h3>Lease End / Bond Cleaning</h3>
+          <p>Detailed move-out cleans focusing on kitchens, bathrooms and hard-to-reach areas — maximise bond refunds with our checklist-led approach.</p>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://source.unsplash.com/600x400/?window,cleaning" alt="Window Cleaning">
+        </div>
+        <div class="service-body">
+          <h3>Window & Glass Cleaning</h3>
+          <p>Streak-free interior and exterior window cleaning for clearer views, improved natural light and a professional finish.</p>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://source.unsplash.com/600x400/?bathroom,cleaning" alt="Bathroom Cleaning">
+        </div>
+        <div class="service-body">
+          <h3>Bathroom & Shower Sanitisation</h3>
+          <p>Deep sanitisation and scale removal for tiles, grout and fittings — leave bathrooms sparkling and hygienic for occupants.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -71,11 +135,13 @@
     <div class="contact-options">
       <a href="mailto:madjimmycleaning@gmail.com" class="btn">📧 Book via Email</a>
       <a href="tel:+61 452 612 147" class="btn secondary">📞 Call Now</a>
+      <a href="tel:+61 451 152 016" class="btn secondary">📞 Call Now</a>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Mad Jimmy Cleaning Services</p>
+    <p>MAD JIMMY PTY LTD</p>
+    <p> Australian Company Number 672 118 446</p>
   </footer>
 
   <script src="script.js"></script>
