@@ -280,6 +280,11 @@ header p {
   .bubble {
     display: none;
   }
+
+  /* Reduce the blue header vertical padding by 40px on mobile while keeping logo and font sizes intact */
+  header {
+    padding: 60px 20px; /* was 100px; lowered by 40px */
+  }
 }
 
 /* Offers Section */
