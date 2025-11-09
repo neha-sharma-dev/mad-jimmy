@@ -4,6 +4,13 @@ function typeWriter(element, text, speed = 100) {
   element.innerHTML = '';
   element.style.opacity = '1';
   
+  // Check if mobile
+  const isMobile = window.innerWidth <= 768;
+  if (isMobile) {
+    element.style.whiteSpace = 'normal';
+    element.style.wordWrap = 'break-word';
+  }
+  
   function type() {
     if (i < text.length) {
       element.innerHTML += text.charAt(i);

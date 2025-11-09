@@ -289,6 +289,67 @@ header p {
   }
 }
 
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px) scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+  }
+  70% {
+    transform: translateY(-10px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
 /* Hero Layout */
 .hero {
   display: flex;
@@ -312,6 +373,7 @@ header p {
   border-right: 2px solid white;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 100%;
 }
 
 .hero-text p {
@@ -360,17 +422,30 @@ header p {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+  header {
+    padding: 60px 15px;
+    min-height: 400px;
+  }
+  
   .hero {
     flex-direction: column;
     text-align: center;
+    gap: 20px;
+    max-width: 100%;
+    overflow: hidden;
   }
   
   .hero-text {
     text-align: center;
+    max-width: 100%;
+    min-width: auto;
   }
   
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 100%;
   }
   
   .hero-logo {
@@ -378,7 +453,8 @@ header p {
   }
   
   .hero-logo img {
-    height: 120px;
+    height: 100px;
+    max-width: 90%;
   }
   
   .bubble {
@@ -388,6 +464,13 @@ header p {
   .hero-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+    max-width: 100%;
+  }
+  
+  .hero-buttons .btn {
+    width: 200px;
+    max-width: 90%;
   }
   
   .hero-buttons .btn:first-child,
