@@ -147,49 +147,9 @@ header p {
 }
 
 @media (max-width: 768px) {
-  header {
-    padding: 60px 15px;
-  }
-  
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-  
-  .hero-text {
-    text-align: center;
-    max-width: 100%;
-  }
-  
-  .hero-text h1 {
-    font-size: 1.6rem !important;
-    white-space: normal !important;
-    word-wrap: break-word;
-    line-height: 1.2;
-  }
-  
-  .hero-logo {
-    order: -1;
-  }
-  
-  .hero-logo img {
-    height: 100px;
-  }
-  
-  .bubble {
-    display: none;
-  }
-  
   .hero-buttons {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-  }
-  
-  .hero-buttons .btn {
-    width: 200px;
-    max-width: 90%;
   }
 }
 
@@ -268,188 +228,6 @@ header p {
   }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-100px) scale(0.3);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0) scale(1.05);
-  }
-  70% {
-    transform: translateY(-10px) scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-/* Animation Keyframes */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-100px) scale(0.3);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0) scale(1.05);
-  }
-  70% {
-    transform: translateY(-10px) scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-/* Animation Keyframes */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-100px) scale(0.3);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0) scale(1.05);
-  }
-  70% {
-    transform: translateY(-10px) scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
 /* Hero Layout */
 .hero {
   display: flex;
@@ -468,49 +246,13 @@ header p {
   z-index: 3;
 }
 
-.hero-text h1 {
-  opacity: 0;
-  border-right: 2px solid white;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 100%;
-}
-
-.hero-text p {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: 2s;
-}
-
-.hero-buttons {
-  opacity: 0;
-}
-
-.hero-buttons .btn:first-child {
-  animation: slideInLeft 0.6s ease forwards;
-  animation-delay: 3s;
-}
-
-.hero-buttons .btn:last-child {
-  animation: slideInRight 0.6s ease forwards;
-  animation-delay: 3.2s;
-}
-
-.hero-buttons .btn {
-  animation: pulse 2s ease-in-out infinite;
-  animation-delay: 5s;
-}
-
 .hero-logo {
   flex: 0 0 auto;
   z-index: 3;
-  opacity: 0;
-  animation: bounceIn 1s ease forwards;
-  animation-delay: 2.5s;
 }
 
 .hero-logo img {
-  height: 180px;
+  height: 240px;
   width: auto;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
   transition: transform 0.3s ease;
@@ -520,101 +262,23 @@ header p {
   transform: scale(1.05);
 }
 
-/* Hero Animation Styles */
-.hero-text h1 {
-  opacity: 0;
-  border-right: 2px solid white;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.hero-text p {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: 2s;
-}
-
-.hero-buttons {
-  opacity: 0;
-}
-
-.hero-buttons .btn:first-child {
-  animation: slideInLeft 0.6s ease forwards;
-  animation-delay: 3s;
-}
-
-.hero-buttons .btn:last-child {
-  animation: slideInRight 0.6s ease forwards;
-  animation-delay: 3.2s;
-}
-
-.hero-buttons .btn {
-  animation: pulse 2s ease-in-out infinite;
-  animation-delay: 5s;
-}
-
-.hero-logo {
-  opacity: 0;
-  animation: bounceIn 1s ease forwards;
-  animation-delay: 2.5s;
-}
-
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  header {
-    padding: 60px 15px;
-    min-height: 400px;
-  }
-  
   .hero {
     flex-direction: column;
     text-align: center;
-    gap: 20px;
-    max-width: 100%;
-    overflow: hidden;
   }
   
   .hero-text {
     text-align: center;
-    max-width: 100%;
-    min-width: auto;
-  }
-  
-  .hero-text h1 {
-    font-size: 1.8rem;
-    white-space: normal;
-    word-wrap: break-word;
-    max-width: 100%;
   }
   
   .hero-logo {
     order: -1;
   }
   
-  .hero-logo img {
-    height: 100px;
-    max-width: 90%;
-  }
-  
   .bubble {
     display: none;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    max-width: 100%;
-  }
-  
-  .hero-buttons .btn {
-    width: 200px;
-    max-width: 90%;
-  }
-  
-  .hero-buttons .btn:first-child,
-  .hero-buttons .btn:last-child {
-    animation: fadeInUp 0.6s ease forwards;
   }
 }
 
@@ -632,7 +296,6 @@ header p {
 }
 
 /* Services Section */
-/* Services Section (new: responsive cards + fade-in animation) */
 .services-section {
   padding: 72px 20px;
   background: #ffffff;
@@ -705,7 +368,7 @@ header p {
   text-align: center;
   padding: 60px 20px;
   background-color: #B5CCE3;
-  color: black; /* prefer black text as requested */
+  color: black; 
 }
 
 .contact-options {
