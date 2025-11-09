@@ -314,9 +314,7 @@ header p {
     width: 180px;
   }
   
-  .bubble {
-    display: none;
-  }
+
 }
 
 @media (max-width: 480px) {
