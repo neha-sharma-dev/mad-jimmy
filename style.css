@@ -252,7 +252,7 @@ header p {
 }
 
 .hero-logo img {
-  height: 240px;
+  height: 200px;
   width: auto;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
   transition: transform 0.3s ease;
