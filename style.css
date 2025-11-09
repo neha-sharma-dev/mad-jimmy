@@ -305,7 +305,7 @@ header p {
 
 .services-heading {
   text-align: center;
-  color: #FF6F61; /* coral */
+  color: #e5990d; /* coral */
   font-size: 2.25rem;
   margin-bottom: 32px;
   font-weight: 600;
@@ -368,7 +368,7 @@ header p {
 #contact {
   text-align: center;
   padding: 60px 20px;
-  background-color: #0B4C85;
+  background-color: #e5990d;
   color: white;
 }
 
