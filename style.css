@@ -343,26 +343,6 @@ header p {
 
 }
 
-@media (max-width: 480px) {
-  header {
-    padding: 30px 10px;
-    min-height: 280px;
-  }
-  
-  header h1 {
-    font-size: 1.6rem;
-  }
-  
-  .hero-logo img {
-    height: 100px;
-  }
-  
-  .btn {
-    width: 160px;
-    padding: 9px 18px;
-  }
-}
-
 /* Offers Section */
 #offers {
   text-align: center;
